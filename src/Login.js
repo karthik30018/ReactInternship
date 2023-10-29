@@ -1,6 +1,12 @@
 import React from "react";  //  ; -- is optional
 import Button from "./Button";
+import { Navigate, useNavigate } from "react-router-dom";
 function Login(){
+    const goTopage=useNavigate();
+    function NavigateTo(){
+        goTopage("/product")
+    }
+
     return(
         <div style={{backgroundColor:"black"}}>
             <h1 style={{color:"aqua"}}>Login</h1>
@@ -9,7 +15,7 @@ function Login(){
             <br/>
             <input style={{background:"white",color:"black"}} type="password" placeholder="Password"></input>
             <br/>
-            <Button name="LogIn"/>
+            <button onClick={NavigateTo}>Login</button>
             
             </div>
         </div>
